@@ -1,0 +1,30 @@
+!!!
+%html{:lang => :en}
+  %head
+    %meta{:charset => "UTF-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title BlueCite.org :: Beating Back the Bluebook Blues
+    %link{:rel => :stylesheet, :href => 'http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700&subset=latin,latin-ext'}
+    %link{:rel => :stylesheet, :href => "/stylesheets/bootstrap.min.css"}
+    %link{:rel => :stylesheet, :href => "/stylesheets/bootstrap-responsive.min.css"}
+    %link{:rel => :stylesheet, :href => "/stylesheets/datepicker.css"}
+    %link{:rel => :stylesheet, :href => "/stylesheets/styles.css"}
+  %body
+    .container
+      = yield
+      %hr
+      %footer.row
+        .span2
+          %iframe{:src => "http://ghbtns.com/github-btn.html?user=BlackacreLabs&type=follow", :frameborder => "0", :scrolling => "0", :width => "200", :height => "20"}
+        .span2.offset8
+          %small
+            Brought to you by
+            = succeed ',' do
+              %a{:href => "http://www.blackacrelabs.org"}> Blackacre Labs
+            %br
+            a Texas non-profit corporation
+    %script{:src => "http://code.jquery.com/jquery-latest.js"}
+    %script{:src => "/javascripts/bootstrap.min.js"}
+    %script{:src => "/javascripts/bootstrap-datepicker.js"}
+    %script{:src => "/javascripts/ZeroClipboard.min.js"}
+    %script{:src => "/coffeescripts/interface.js"}

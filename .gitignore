@@ -1,0 +1,6 @@
+repo
+coffeescripts/*.js
+
+config/mongoid.yml
+config/cloudfiles.yml
+public/javascripts/interface.js

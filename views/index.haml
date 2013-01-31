@@ -1,0 +1,44 @@
+.row
+  .page-header
+    %h1
+      BlueCite
+      %small Beating Back the Bluebook Blues
+.row
+  .span4
+    %h2 Abbreviation
+    - text = 'Brotherhood of American Telecommunications Trustees'
+    %blockquote
+      %button#abbreviationClip.clip.btn.btn-tiny.pull-right{:title => "Copy", 'data-clipboard-target' => 'abbreviationOutput'}
+        %i.icon.icon-briefcase
+      %p#abbreviationOutput.lead
+        = Bluebook::Abbreviation.table_6(Bluebook::Abbreviation.table_10(text))
+    %form.form-horizontal#abbreviate
+      .control-group
+        %textarea#abbreviateText.span4{:name => :text, :placeholder => text, :rows => 3}
+      .control-group
+        %label.radio.inline
+          %input{:type => :radio, :name => :abbreviations, :value => '6'}
+            T6
+        %label.radio.inline
+          %input{:type => :radio, :name => :abbreviations, :value => '10'}
+            T10
+        %label.radio.inline
+          %input{:type => :radio, :name => :abbreviations, :value => '610', :checked => true}
+            Both
+        %button.btn.pull-right{:type => :submit}
+          Abbreviate
+          %i.icon.icon-filter
+  .span3
+    %h2 Dates
+    - date = Date.today.strftime('%m/%d/%Y')
+    %blockquote
+      %button#dateClip.clip.btn.btn-tiny.pull-right{:title => "Copy", 'data-clipboard-target' => 'dateOutput'}
+        %i.icon.icon-briefcase
+      %p#dateOutput.lead
+        = Date.today.to_bluebook
+    %form
+      .control-group
+        .input-append
+          %input#datePicker.input-small{:type => :text, :value => date, 'data-date-format' => 'mm/dd/yyyy'}
+          .add-on
+            %i.icon.icon-calendar
