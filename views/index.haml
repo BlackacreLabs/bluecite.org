@@ -8,7 +8,7 @@
     %h2 Abbreviation
     - text = 'Brotherhood of American Telecommunications Trustees'
     %blockquote
-      %button#abbreviationClip.clip.btn.btn-tiny.pull-right{:title => "Copy", 'data-clipboard-target' => 'abbreviationOutput'}
+      %button#abbreviationClip.clip.btn.btn-tiny.pull-right.copy{:title => "Copy", 'data-clipboard-target' => 'abbreviationOutput'}
         %i.icon.icon-briefcase
       %p#abbreviationOutput.lead
         = Bluebook::Abbreviation.table_6(Bluebook::Abbreviation.table_10(text))
@@ -32,7 +32,7 @@
     %h2 Dates
     - date = Date.today.strftime('%m/%d/%Y')
     %blockquote
-      %button#dateClip.clip.btn.btn-tiny.pull-right{:title => "Copy", 'data-clipboard-target' => 'dateOutput'}
+      %button#dateClip.clip.btn.btn-tiny.pull-right.copy{:title => "Copy", 'data-clipboard-target' => 'dateOutput'}
         %i.icon.icon-briefcase
       %p#dateOutput.lead
         = Date.today.to_bluebook

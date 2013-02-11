@@ -21,7 +21,7 @@
       return false;
     });
     new ZeroClipboard($('#dateClip'));
-    return $('#datePicker').datepicker().on('changeDate', function(e) {
+    $('#datePicker').datepicker().on('changeDate', function(e) {
       var output;
       output = $('#dateOutput').html(SPINNER);
       $.getJSON('/date', {
@@ -31,6 +31,7 @@
       });
       return false;
     });
+    return $('button.copy').tooltip();
   });
 
 }).call(this);

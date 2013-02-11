@@ -17,3 +17,5 @@ $().ready ->
     $.getJSON '/date', {text: e.date.toISOString()}, (data) ->
       output.text(data.text)
     return false
+
+  $('button.copy').tooltip()
