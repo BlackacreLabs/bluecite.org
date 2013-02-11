@@ -1,13 +1,10 @@
 # encoding: UTF-8
-require 'rubygems'
-require 'bundler/setup'
 
 require 'haml'
 require 'sinatra'
 require 'sinatra/json'
 require 'bluebook/abbreviation'
 require 'bluebook/date_patch'
-require 'json'
 
 class BlackacreReports < Sinatra::Base
   helpers Sinatra::JSON
