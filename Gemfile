@@ -12,6 +12,7 @@ gem 'thin'
 
 group :development do
   gem 'foreman'
+  gem 'guard-bundler'
   gem 'guard-coffeescript'
   gem 'guard-rack'
 end
