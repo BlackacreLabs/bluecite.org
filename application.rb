@@ -2,7 +2,6 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'barista'
 require 'haml'
 require 'sinatra'
 require 'sinatra/json'
@@ -14,12 +13,6 @@ class BlackacreReports < Sinatra::Base
   helpers Sinatra::JSON
 
   set :haml, { :format => :html5 }
-
-  register Barista::Integration::Sinatra
-  Barista.configure do |b|
-    b.root = File.join(root, 'coffeescripts')
-    b.logger.level = Logger::WARN
-  end
 
   configure :production do
     if ENV['GOOGLE_ANALYTICS_ID']
