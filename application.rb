@@ -21,6 +21,19 @@ class BlackacreReports < Sinatra::Base
     b.logger.level = Logger::WARN
   end
 
+  configure :production do
+    if ENV['GOOGLE_ANALYTICS_ID']
+      require 'rack-google-analytics'
+      use Rack::GoogleAnalytics,
+        :tracker => ENV['GOOGLE_ANALYTICS_ID']
+    end
+
+    if ENV['CANONICAL_HOST']
+      require 'rack-canonical-host'
+      use Rack::CanonicalHost, ENV['CANONICAL_HOST']
+    end
+  end
+
   get '/' do
     haml :index
   end
